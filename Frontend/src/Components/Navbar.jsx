@@ -16,7 +16,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       // Call the backend logout API
-      const response = await fetch(`http://localhost:5000/users/logout`, {
+      const response = await fetch(`https://ticket-management-full-stack.onrender.com/users/logout`, {
         method: "POST",
         credentials: "include",
         headers: {

@@ -26,7 +26,7 @@ const Setting = () => {
 
   // common logout routine
   const doLogout = async () => {
-    await fetch('http://localhost:5000/users/logout', {
+    await fetch('https://ticket-management-full-stack.onrender.com/users/logout', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
@@ -36,7 +36,7 @@ const Setting = () => {
   };
 
   const handleSave = async () => {
-    const userRes = await fetch(`http://localhost:5000/users/getUserDetails/${userId}`, {
+    const userRes = await fetch(`https://ticket-management-full-stack.onrender.com/users/getUserDetails/${userId}`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -71,7 +71,7 @@ const Setting = () => {
     if (password) payload.password = password;
 
     try {
-      const res = await fetch(`http://localhost:5000/users/updateRegister/${userId}`, {
+      const res = await fetch(`https://ticket-management-full-stack.onrender.com/users/updateRegister/${userId}`, {
         method: 'PUT',
         credentials: 'include',
         headers: {

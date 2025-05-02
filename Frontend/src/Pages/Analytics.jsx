@@ -19,7 +19,7 @@ export default function Analytics() {
 
   // Load threshold once
   useEffect(() => {
-    fetch('http://localhost:5000/chatbot/design', {
+    fetch('https://ticket-management-full-stack.onrender.com/chatbot/design', {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     })
       .then(res => res.json())
@@ -32,7 +32,7 @@ export default function Analytics() {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tickets/${userId}`, {
+    fetch(`https://ticket-management-full-stack.onrender.com/tickets/${userId}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token')}`
