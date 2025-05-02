@@ -93,9 +93,9 @@ function SignUp() {
             });
 
             if (response.ok) {
-                const user = await response.json();
-                setUserId(user.id); // Save user ID in context
-                localStorage.setItem("token", user.token); // Save token in local storage
+                const data = await response.json();
+                setUserId(data.user.id); // Save user ID in context
+                localStorage.setItem("token", data.token); // Save token in local storage
                 toast.success("Registration successful! Redirecting..."); // Show success toast
                 setTimeout(() => {
                     navigate(`/member`); // Redirect after a short delay
