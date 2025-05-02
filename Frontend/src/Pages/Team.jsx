@@ -26,7 +26,7 @@ const Team = () => {
     const fetchTeamMembers = async () => {
       try {
         // Fetch user details to check teamId
-        const userRes = await fetch(`https://ticket-management-full-stack.onrender.com/users/getUserDetails/${userId}`, {
+        const userRes = await fetch(`http://localhost:5000/users/getUserDetails/${userId}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -44,7 +44,7 @@ const Team = () => {
 
         // Fetch team members if teamId exists
         if (user.teamId) {
-          const teamRes = await fetch(`https://ticket-management-full-stack.onrender.com/team/getTeamMembers/${user.teamId}`, {
+          const teamRes = await fetch(`http://localhost:5000/team/getTeamMembers/${user.teamId}`, {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -62,7 +62,7 @@ const Team = () => {
           // Fetch additional details for each team member
           const memberDetailsPromises = teamData.map(async (member) => {
             try {
-              const memberRes = await fetch(`https://ticket-management-full-stack.onrender.com/users/getUserDetails/${member.userId._id}`, {
+              const memberRes = await fetch(`http://localhost:5000/users/getUserDetails/${member.userId._id}`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -109,7 +109,7 @@ const Team = () => {
           toast.error('You are unauthorized to add members.');
           return;
         }
-        const res = await fetch('https://ticket-management-full-stack.onrender.com/team/addMember', {
+        const res = await fetch('http://localhost:5000/team/addMember', {
           method: 'POST',
           credentials: 'include',
           headers: {
@@ -150,7 +150,7 @@ const Team = () => {
       console.log('Deleting member ID:', toDeleteMember.id);
       console.log('Deleting member team ID:', user.teamId);
       try {
-        const res = await fetch(`https://ticket-management-full-stack.onrender.com/team/removeMember/${user.teamId}`, {
+        const res = await fetch(`http://localhost:5000/team/removeMember/${user.teamId}`, {
           method: 'DELETE',
           credentials: 'include',
           headers: {
@@ -300,7 +300,7 @@ const Team = () => {
                   return;
                 }
                 const res = await fetch(
-                  `https://ticket-management-full-stack.onrender.com/team/updateMemberRole/${user.teamId}`,
+                  `http://localhost:5000/team/updateMemberRole/${user.teamId}`,
                   {
                     method: 'PUT',
                     credentials: 'include',

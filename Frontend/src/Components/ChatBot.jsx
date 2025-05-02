@@ -36,7 +36,7 @@ export default function ChatBot() {
   useEffect(() => {
     const fetchDesign = async () => {
       try {
-        const res = await fetch('https://ticket-management-full-stack.onrender.com/chatbot/design');
+        const res = await fetch('http://localhost:5000/chatbot/design');
         const data = await res.json();
         setDesign(prev => ({ ...prev, ...data }));
         // initialize chat preview messages
@@ -53,9 +53,13 @@ export default function ChatBot() {
     const userMsg = input;
     setInput('');
 
+    console.log('User message:', userMsg);
+    console.log('email:', email);
+    console.log('ticketId:', ticketId);
+
     try {
       if (!ticketId) {
-        const ticketResp = await fetch('https://ticket-management-full-stack.onrender.com/tickets/create-or-get', {
+        const ticketResp = await fetch('http://localhost:5000/tickets/create-or-get', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, query: userMsg })
@@ -66,7 +70,7 @@ export default function ChatBot() {
           setMessages(ticketData.ticket.messages.map(m => ({ type: m.sender, text: m.text })));
         }
       } else {
-        const response = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/${ticketId}/messages`, {
+        const response = await fetch(`http://localhost:5000/tickets/${ticketId}/messages`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ sender: 'user', text: userMsg })
@@ -81,7 +85,7 @@ export default function ChatBot() {
 
   const handleDetailSubmit = async () => {
     try {
-      const userResp = await fetch('https://ticket-management-full-stack.onrender.com/tickets/check-user', {
+      const userResp = await fetch('http://localhost:5000/tickets/check-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone })

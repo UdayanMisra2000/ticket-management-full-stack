@@ -28,7 +28,7 @@ export default function ContactCenter() {
     const init = async () => {
       try {
         // Fetch user details
-        const userRes = await fetch(`https://ticket-management-full-stack.onrender.com/users/getUserDetails/${userId}`, {
+        const userRes = await fetch(`http://localhost:5000/users/getUserDetails/${userId}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -44,7 +44,7 @@ export default function ContactCenter() {
         const { user } = await userRes.json(); // Destructure the nested user object
 
         // Fetch tickets
-        const ticketsRes = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/${userId}`, {
+        const ticketsRes = await fetch(`http://localhost:5000/tickets/${userId}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -61,7 +61,7 @@ export default function ContactCenter() {
 
         // Fetch team members
         if (user.teamId) {
-          const teamRes = await fetch(`https://ticket-management-full-stack.onrender.com/team/getTeamMembers/${user.teamId}`, {
+          const teamRes = await fetch(`http://localhost:5000/team/getTeamMembers/${user.teamId}`, {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -91,7 +91,7 @@ export default function ContactCenter() {
 
     const fetchMessages = async () => {
       try {
-        const msgsRes = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/${selectedTicket._id}/messages`, {
+        const msgsRes = await fetch(`http://localhost:5000/tickets/${selectedTicket._id}/messages`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -119,7 +119,7 @@ export default function ContactCenter() {
 
     const fetchUserDetails = async () => {
       try {
-        const userRes = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/botuser/${selectedTicket.raisedBy}`, {
+        const userRes = await fetch(`http://localhost:5000/tickets/botuser/${selectedTicket.raisedBy}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -146,7 +146,7 @@ export default function ContactCenter() {
   const handleAssign = async (e) => {
     const memberId = e.target.value;
     try {
-        const res = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/${selectedTicket._id}/assign`, {
+        const res = await fetch(`http://localhost:5000/tickets/${selectedTicket._id}/assign`, {
             method: 'PATCH',
             headers: { 
                 'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ export default function ContactCenter() {
   const handleStatusChange = async (e) => {
     const status = e.target.value;
     try {
-      const res = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/${selectedTicket._id}/status`, {
+      const res = await fetch(`http://localhost:5000/tickets/${selectedTicket._id}/status`, {
         method: 'PATCH',
         headers: { 
           'Content-Type': 'application/json',
@@ -187,7 +187,7 @@ export default function ContactCenter() {
   const handleSendMessage = async () => {
     if (!newMessage.trim() || !selectedTicket) return;
     try {
-      const res = await fetch(`https://ticket-management-full-stack.onrender.com/tickets/${selectedTicket._id}/messages`, {
+      const res = await fetch(`http://localhost:5000/tickets/${selectedTicket._id}/messages`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
