@@ -23,7 +23,7 @@ export default function ChatBotDesigning() {
       try {
         // Fetch user details to check role
         const userId = localStorage.getItem('userId');
-        const userRes = await fetch(`http://localhost:5000/users/getUserDetails/${userId}`, {
+        const userRes = await fetch(`https://ticket-management-full-stack.onrender.com/users/getUserDetails/${userId}`, {
           method: 'GET',
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
           credentials: 'include'
@@ -37,7 +37,7 @@ export default function ChatBotDesigning() {
         }
 
         // Fetch chatbot configuration
-        const res = await fetch('http://localhost:5000/chatbot/design', {
+        const res = await fetch('https://ticket-management-full-stack.onrender.com/chatbot/design', {
           method: 'GET',
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
           credentials: 'include'
@@ -64,7 +64,7 @@ export default function ChatBotDesigning() {
     try {
       // Fetch user details to check role
       const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
-      const userRes = await fetch(`http://localhost:5000/users/getUserDetails/${userId}`, {
+      const userRes = await fetch(`https://ticket-management-full-stack.onrender.com/users/getUserDetails/${userId}`, {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
         credentials: 'include'
@@ -88,7 +88,7 @@ export default function ChatBotDesigning() {
       };
 
       // Save chatbot configuration
-      const saveRes = await fetch('http://localhost:5000/chatbot/design', {
+      const saveRes = await fetch('https://ticket-management-full-stack.onrender.com/chatbot/design', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

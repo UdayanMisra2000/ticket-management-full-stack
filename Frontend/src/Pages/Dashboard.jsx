@@ -22,10 +22,10 @@ export default function Dashboard() {
   const fetchTickets = async () => {
     let url;
     if (activeTab === 'all') {
-      url = `http://localhost:5000/tickets/${userId}`;
+      url = `https://ticket-management-full-stack.onrender.com/tickets/${userId}`;
     } else {
       const statusParam = activeTab === 'resolved' ? 'resolved' : 'open';
-      url = `http://localhost:5000/tickets/${userId}/status/${statusParam}`;
+      url = `https://ticket-management-full-stack.onrender.com/tickets/${userId}/status/${statusParam}`;
     }
     const res = await fetch(url, { 
       method: 'GET',
@@ -117,7 +117,7 @@ function TicketUser({ id }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tickets/botuser/${id}`, {  
+    fetch(`https://ticket-management-full-stack.onrender.com/tickets/botuser/${id}`, {  
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
