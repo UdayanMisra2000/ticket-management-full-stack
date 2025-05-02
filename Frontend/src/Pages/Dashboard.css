@@ -1,0 +1,104 @@
+.dash-container {
+    padding: 1rem;
+    background: #f0f2f5;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  .dash-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .dash-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .dash-header input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .dash-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .tab {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 2px solid transparent;
+  }
+  .tab.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+  }
+  .ticket-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ticket-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  .ticket-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ticket-dot {
+    width: 12px;
+    height: 12px;
+    background: #ffc107;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .ticket-id {
+    font-weight: bold;
+  }
+  .ticket-msg {
+    margin-top: 0.25rem;
+    color: #333;
+  }
+  .ticket-time {
+    margin-left: auto;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .open-link {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+  .ticket-user {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+  }
+  .user-info .user-name {
+    font-weight: bold;
+  }
+  .user-contact {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  

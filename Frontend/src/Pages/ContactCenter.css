@@ -1,0 +1,240 @@
+/* WhatsApp/Telegram-style Chat Layout */
+
+.cc-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+  }
+  
+  /* ─── Sidebar (Chat List) ───────────────────────── */
+  .cc-chat-list {
+    width: 300px;
+    background: #fff;
+    border-right: 1px solid #ccc;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .cc-chat-list h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .cc-chat-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .chat-item {
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .chat-item:hover {
+    background: #e9f0f9;
+  }
+  
+  .chat-item.active {
+    background: #dbeaff;
+  }
+  
+  .status-text {
+    font-size: 0.85rem;
+    color: #777;
+  }
+  
+  /* ─── Main Chat Window ──────────────────────────── */
+  .cc-chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #e5ddd5;
+    position: relative;
+  }
+  
+  /* Header with dashboard icon */
+  .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    height: 4rem;
+  }
+  
+  .chat-header span {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* // Paste your icon <img> inside this div below */
+  .dashboard-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  /* Messages area */
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Messages */
+  .message {
+    max-width: 70%;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  .message.bot {
+    align-self: flex-start;
+    background: #ffffff;
+    border: 1px solid #ddd;
+  }
+  
+  .message.user {
+    align-self: flex-end;
+    background: #031b47;
+  }
+  
+  /* Chat input area */
+  .chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    height: 12vh;
+    border-radius: 10px;
+    border-top: 1px solid #ccc; 
+    background: #f0f0f0;
+  }
+  
+  .chat-input-area textarea {
+    flex: 1;
+    margin: 0;
+    resize: none;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 0.95rem;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  
+  .chat-input-area button {
+    margin-left: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    background-color: transparent;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+  }
+  
+  .chat-input-area button:hover {
+    background-color: #099761;
+  }
+  
+  /* ─── Right Details Panel ───────────────────────── */
+  .cc-details-panel {
+    width: 280px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .user-info {
+    margin-bottom: 1rem;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .user-contact {
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .detail-group {
+    margin-bottom: 1rem;
+  }
+  
+  .detail-group label {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .detail-group select {
+    width: 100%;
+    padding: 0.45rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  .date-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    position: relative;
+  }
+  .date-separator span {
+    background: #e5ddd5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .resolved-banner {
+    text-align: center;
+    padding: 1rem;
+    background: #ffeded;
+    color: #a00;
+    font-weight: bold;
+  }
+  .detail-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  .detail-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  .detail-text {
+    flex: 1;
+  }
+  .badge {
+    background: #ddd;
+    border-radius: 12px;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+  }
+  

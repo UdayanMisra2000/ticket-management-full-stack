@@ -1,0 +1,116 @@
+/* Container layout */
+.design-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    height: calc(100vh - 4rem);
+    box-sizing: border-box;
+  }
+  
+  /* Preview panel */
+.preview-panel {
+    flex: 1;
+    /* padding-top: 10rem; */
+    background: white;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  /* Settings panel */
+  .settings-panel {
+    width: 400px;
+    background: white;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  .setting-section {
+    margin-bottom: 1.5rem;
+  }
+  .setting-section h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Color picker circles */
+  .color-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .color-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+  }
+  .color-circle input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .color-code input {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Text inputs and textareas */
+  .settings-panel input[type="text"],
+  .settings-panel input:not([type]),
+  .settings-panel textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+  }
+  .settings-panel textarea {
+    resize: vertical;
+  }
+  
+  /* Buttons */
+  .settings-panel button {
+    padding: 0.5rem 1rem;
+    background-color: #33475B;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  .settings-panel button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Scrollbar styling for settings */
+  .settings-panel::-webkit-scrollbar {
+    width: 6px;
+  }
+  .settings-panel::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+  }
+
+  .chat-window-preview{
+    margin-top: 10rem;
+  }
+  .chat-close-preview:hover {
+    background: none;
+    transform: scale(1.2);
+    transition: transform 0.2s;
+  }
+  
