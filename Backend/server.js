@@ -10,7 +10,7 @@ import chatBotRouter from './Routes/chatBotRouter.js';
 
 app.use(express.json());
 app.use(cors({
-    origin: ['https://ticket-management-fullstack.netlify.app/'],
+    origin: ['https://ticket-management-fullstack.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true,
 }));
